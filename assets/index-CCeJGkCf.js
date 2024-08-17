@@ -460,7 +460,7 @@ h1{
       background: #fff;
     }
   }
-`,bw=()=>{const e=oo(ta);return x.jsxs(Zw,{children:[x.jsx("h1",{children:"Perfil"}),x.jsx("div",{className:"user-img",children:x.jsx("img",{src:Gt})}),x.jsxs("div",{className:"user-data",children:[x.jsx("div",{children:e.username?e.username:"Sem nome"}),x.jsx("div",{children:e.addr?e.addr:"Sem Endereço"}),x.jsx("div",{children:e.phone?e.phone:"Sem Endereço"})]}),x.jsxs("label",{children:["Nome Completo",x.jsx("input",{onChange:t=>{e.setUsername(t.target.value)},type:"text"})]}),x.jsxs("label",{children:["Endereço",x.jsx("input",{type:"text",onChange:t=>{e.setAddr(t.target.value)}})]}),x.jsxs("label",{children:["Numero",x.jsx("input",{onChange:t=>{e.setPhone(t.target.value)},type:"text"})]})]})},qw=kt.div`
+`,bw=()=>{const e=oo(ta);return x.jsxs(Zw,{children:[x.jsx("h1",{children:"Perfil"}),x.jsx("div",{className:"user-img",children:x.jsx("img",{src:Gt})}),x.jsxs("div",{className:"user-data",children:[x.jsx("div",{children:e.username?e.username:"Sem nome"}),x.jsx("div",{children:e.addr?e.addr:"Sem Endereço"}),x.jsx("div",{children:e.phone?e.phone:"Sem Endereço"})]}),x.jsxs("label",{children:["Nome Completo",x.jsx("input",{onChange:t=>{e.setUsername(t.target.value)},type:"text"})]}),x.jsxs("label",{children:["Endereço",x.jsx("input",{type:"text",onChange:t=>{e.setAddr(t.target.value)}})]}),x.jsxs("label",{children:["Número",x.jsx("input",{onChange:t=>{e.setPhone(t.target.value)},type:"text"})]})]})},qw=kt.div`
   height: 100vh;
   text-align: center;
   background: linear-gradient(to bottom, #fff, #ccf);
@@ -600,7 +600,7 @@ h1{
       width: 80%;
     }
   `}
-`,iS=()=>{const e=oo(ta),[t,n]=P.useState(!1),[r,i]=P.useState(""),[o,l]=P.useState(!1),a=u=>{u.preventDefault(),e.setUrgence(t),e.setDescription(r),l(!0)};return x.jsxs(rS,{children:[x.jsx("h1",{children:"Status"}),o?x.jsx("div",{className:"submited",children:x.jsx("h1",{children:"Pedido enviado! Aguarde socorro e se mantenha a calma."})}):x.jsxs(Gs,{onSubmit:a,action:"/",children:[x.jsxs("label",{className:"urgence",htmlFor:"urgence",children:["Você está em apuros?",x.jsx("input",{onChange:u=>n(u.target.checked),id:"urgence",type:"checkbox"})]}),x.jsxs("label",{className:"description",htmlFor:"description",children:["Descreva sua situação:",x.jsx("textarea",{id:"description",onChange:u=>i(u.target.value)})]}),x.jsx("button",{type:"submit",children:"Enviar"})]})]})},oS=kt.div`
+`,iS=()=>{const e=oo(ta),[t,n]=P.useState(!1),[r,i]=P.useState(""),[o,l]=P.useState(!1),a=u=>{u.preventDefault(),e.setUrgence(t),e.setDescription(r),l(!0)};return x.jsxs(rS,{children:[x.jsx("h1",{children:"Status"}),o?x.jsx("div",{className:"submited",children:x.jsx("h1",{children:"Pedido enviado! Aguarde socorro e mantenha a calma."})}):x.jsxs(Gs,{onSubmit:a,action:"/",children:[x.jsxs("label",{className:"urgence",htmlFor:"urgence",children:["Você está em apuros?",x.jsx("input",{onChange:u=>n(u.target.checked),id:"urgence",type:"checkbox"})]}),x.jsxs("label",{className:"description",htmlFor:"description",children:["Descreva sua situação:",x.jsx("textarea",{id:"description",onChange:u=>i(u.target.value)})]}),x.jsx("button",{type:"submit",children:"Enviar"})]})]})},oS=kt.div`
   display: flex;
   flex-direction: column;
   align-items: center;
