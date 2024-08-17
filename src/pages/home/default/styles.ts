@@ -1,99 +1,68 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ThemeType } from "../../../styles/types/theme-type";
 
 export const SDefault = styled.div<{ theme: ThemeType }>`
-  ${({ theme }) => css`
-    height: 100vh;
-
-    .default-menu {
-      z-index: 1;
-      position: fixed;
+  animation: fadeInAnimation 1s ease;
+  .logo-container {
+    height: 50vh;
+    width: 100%;
+    img {
       width: 100%;
-      background: #fff;
+      padding: 1vh;
+    }
+    span {
+      font-weight: 500;
+    }
 
+    text-align: center;
+  }
+
+  .sign-user-container {
+    margin-top: 5vh;
+    min-height: 50vh;
+    form {
+      margin-top: 10vh;
+      text-align: center;
+      height: 80%;
       display: flex;
-      justify-content: center;
-      box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
 
-      .default-menu-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 13vh;
+      h1 {
+        width: 80%;
+        font-size: 3vh;
+      }
+
+      .field-container {
         width: 80%;
 
-        .ifrs-link {
-          display: flex;
-          align-items: center;
-          img {
-            max-height: 12vh;
-          }
+        label {
+          width: 100%;
+          height: 4vh;
         }
-
-        .intro-home-nav {
-          display: flex;
-          gap: 2vw;
-          .intro-home-nav-item {
-            transition: font-weight 300ms;
-            text-decoration: none;
-            color: #000;
-          }
-          .intro-home-nav-item:hover {
-            font-weight: 330;
-          }
+        input {
+          width: 100%;
+          height: 6vh;
+          border: 1px solid #000;
+          border-radius: 2px;
+          padding-left: 2vw;
+          margin-bottom: 5vh;
+        }
+        input:focus {
+          border: 1.5px solid #000;
+          transform: scale(1.02);
         }
       }
-    }
-
-    section {
-      width: 100%;
-    }
-
-    #intro-default-home {
-      height: 100vh;
-      width: 100%;
-      padding-top: 13vh;
-      align-content: center;
-      padding-bottom: 13vh;
-      animation: fadeInAnimation 2s forwards;
-
-      .intro-container {
-        margin: 0 auto;
-        height: 50vh;
+      .submit-button {
+        height: 7vh;
         width: 80%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3vw;
-
-        .logo-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          .logo {
-            margin-bottom: 2vh;
-            font-family: ${theme.font.family.secondary};
-            font-weight: 900;
-            font-size: ${theme.font.sizes.pageTitle};
-          }
-          .creators {
-            font-weight: 400;
-            font-size: ${theme.font.sizes.small};
-          }
-        }
-
-        .about-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
+        border: 1px solid #000;
+        font-size: 2.5vh;
+        border-radius: 2px;
+        margin-bottom: 5vh;
+        background: #fff;
       }
     }
-
-    #user-sign-default-home {
-      background: #eef;
-      height: 87vh;
-    }
-  `}
+  }
 `;

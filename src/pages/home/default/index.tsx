@@ -1,41 +1,54 @@
+import { Form } from "react-router-dom";
 import { SDefault } from "./styles";
-import logoIfrs from "/images/logo_ifrs.png";
+import logoCaiAlerta from "/images/logo_cai_alerta.png";
+import { useStore } from "zustand";
+import { useUserStore } from "../../../store/userstore";
+import { useState } from "react";
 
 export const DefaultHome = () => {
+  const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
+
+  const userStore = useStore(useUserStore);
+
+  const handleSubmit = () => {
+    userStore.setPhone(phone);
+    userStore.setUsername(username);
+  };
+
   return (
     <SDefault className="default-home-page">
-      <header className="default-menu">
-        <div className="default-menu-content">
-          <a className="ifrs-link" href="https://ifrs.edu.br/feliz">
-            <img src={logoIfrs} alt="IFRS" />
-          </a>
-          <nav className="intro-home-nav">
-            <a href="#intro-default-home" className="intro-home-nav-item">
-              Sobre
-            </a>
-            <a href="#user-sign-default-home" className="intro-home-nav-item">
-              Entrar/Cadastrar
-            </a>
-          </nav>
-        </div>
-      </header>
-      <section id="intro-default-home">
-        <div className="intro-container">
-          <div className="logo-container">
-            <div className="logo">Logo Maneira</div>
-            <span className="creators">Davi Lucas Felipe Lassem e Luft</span>
+      <div className="logo-container">
+        <img src={logoCaiAlerta} alt="Caí Alerta" />
+      </div>
+      <div className="sign-user-container">
+        <Form onSubmit={handleSubmit} action="/confirm/" method="GET">
+          <h1>Enviaremos um SMS para o seu número</h1>
+          <div className="field-container">
+            <label htmlFor="user-name">Seu nome: </label>
+            <input
+              onChange={(e) => setUsername(e.target.value)}
+              type="text"
+              id="user-name"
+            />
           </div>
-          <div className="about-container">
-            <span className="about">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem
-              unde modi quam voluptas quasi id amet ipsam laudantium placeat qui
-              mollitia quia accusantium impedit suscipit maiores aliquid illo,
-              iste nam!
-            </span>
+          <div className="field-container">
+            <label htmlFor="user-phone">Número de telefone: </label>
+            <input
+              onChange={(e) => setPhone(e.target.value)}
+              type="tel"
+              id="user-phone"
+            />
           </div>
-        </div>
-      </section>
-      <section id="user-sign-default-home"></section>
+          <div className="field-container">
+            <label htmlFor="user-pss">Senha: </label>
+            <input type="password" id="user-pss" />
+          </div>
+          <button type="submit" className="submit-button">
+            Enviar
+          </button>
+        </Form>
+      </div>
     </SDefault>
   );
 };
